@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PrazskaLitackaMobile" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/color_bar_primary_red</item>
+        <item name="colorPrimaryVariant">@color/color_bar_primary_red</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/color_bar_secondary_red</item>
+        <item name="colorSecondaryVariant">@color/color_bar_secondary_red</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+    </style>
+
+    <style name="Theme.PrazskaLitackaMobile" parent="Base.Theme.PrazskaLitackaMobile" />
+</resources>

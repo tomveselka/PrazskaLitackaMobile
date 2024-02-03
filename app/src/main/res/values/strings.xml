@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Prazska litacka - mobile</string>
+    <string name="racer_name_label">Name of racer</string>
+    <string name="racer_name_value">Pepa Novak</string>
+    <string name="racer_id_label">Number of racer</string>
+    <string name="racer_id_value">55</string>
+    <string name="points_total_label">Points total</string>
+    <string name="points_total_value">62</string>
+    <string name="bonus_stations_number_label">Bonus stations visited</string>
+    <string name="bonus_stations_number_value">2/5</string>
+    <string name="bonus_lines_number_label">Bonus lines visited</string>
+    <string name="bonus_lines_number_value">1/3</string>
+    <string name="from_label">Fr:</string>
+    <string name="to_label">To:</string>
+</resources>

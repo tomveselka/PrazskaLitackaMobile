@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".RaceListItem">
+
+
+    <TextView
+        android:id="@+id/from_label"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:text="@string/from_label" />
+
+    <TextView
+        android:id="@+id/from_value"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@+id/from_label"
+        android:gravity="center_vertical"
+        android:text="Krizikova" />
+
+    <TextView
+        android:id="@+id/to_label"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/from_label"
+        android:gravity="center"
+        android:text="@string/to_label" />
+
+    <TextView
+        android:id="@+id/to_value"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/from_value"
+        android:layout_toRightOf="@+id/from_label"
+        android:gravity="center_vertical"
+        android:text="Urxova"
+        />
+
+    <TextView
+        android:id="@+id/from_points"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@+id/from_value"
+        android:gravity="center"
+        android:text="15" />
+
+    <TextView
+        android:id="@+id/to_points"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/from_points"
+        android:layout_toRightOf="@+id/from_value"
+        android:gravity="center"
+        android:text="15" />
+
+    <ImageView
+        android:id="@+id/transport_type_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@+id/from_points"
+        android:gravity="center"
+        android:src="@drawable/bus_icon" />
+
+    <TextView
+        android:id="@+id/transport_points"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@+id/transport_type_icon"
+        android:gravity="center_vertical"
+        android:text="15"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/points_value"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@+id/transport_points"
+        android:gravity="center"
+        android:text="15"
+        android:textAlignment="center"
+        android:textSize="48sp" />
+</RelativeLayout>
