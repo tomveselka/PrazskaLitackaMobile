@@ -11,5 +11,12 @@
     <string name="bonus_lines_number_label">Bonus lines visited</string>
     <string name="bonus_lines_number_value">1/3</string>
     <string name="from_label">Fr:</string>
+    <string name="from_default">Starting station</string>
     <string name="to_label">To:</string>
+    <string name="to_default">Ending station</string>
+    <string name="line_label">Line</string>
+    <string name="checkbox_nonstandard_line">Was line nonstandard</string>
+    <string name="nonstandard_line_description">Briefly describe diversion</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
 </resources>

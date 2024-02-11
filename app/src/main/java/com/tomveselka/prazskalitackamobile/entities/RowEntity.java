@@ -1,7 +1,13 @@
 package com.tomveselka.prazskalitackamobile.entities;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "rows_of_races")
 public class RowEntity {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private boolean fromDuplicate;
     private int fromPoints;
     private boolean fromBonus;
@@ -123,6 +129,10 @@ public class RowEntity {
         this.lineType = lineType;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public RowEntity(boolean fromDuplicate, int fromPoints, boolean fromBonus, String fromStation, boolean toDuplicate, int toPoints, boolean toBonus, String toStation, boolean lineDuplicate, int linePoints, boolean lineBonus, String lineNumber, String lineType) {
         this.fromDuplicate = fromDuplicate;
         this.fromPoints = fromPoints;
@@ -145,7 +155,8 @@ public class RowEntity {
     @Override
     public String toString() {
         return "RowEntity{" +
-                "fromDuplicate=" + fromDuplicate +
+                "id=" + id +
+                ", fromDuplicate=" + fromDuplicate +
                 ", fromPoints=" + fromPoints +
                 ", fromBonus=" + fromBonus +
                 ", fromStation='" + fromStation + '\'' +

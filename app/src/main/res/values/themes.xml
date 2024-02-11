@@ -4,10 +4,14 @@
         <item name="colorPrimary">@color/color_bar_primary_red</item>
         <item name="colorPrimaryVariant">@color/color_bar_primary_red</item>
         <item name="colorOnPrimary">@color/white</item>
-
         <item name="colorSecondary">@color/color_bar_secondary_red</item>
         <item name="colorSecondaryVariant">@color/color_bar_secondary_red</item>
         <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <style name="Theme.DialogAddItem" parent="Theme.Material3.Light.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
 
     </style>
 

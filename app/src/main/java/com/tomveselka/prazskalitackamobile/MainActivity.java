@@ -1,15 +1,24 @@
 package com.tomveselka.prazskalitackamobile;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static com.google.android.material.internal.ContextUtils.getActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.tomveselka.prazskalitackamobile.entities.RowEntity;
-import com.tomveselka.prazskalitackamobile.race.RowService;
+import com.tomveselka.prazskalitackamobile.race.domain.RowService;
+import com.tomveselka.prazskalitackamobile.race.row.RowViewModel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     ListView rowList;
 
+    private RowViewModel rowViewModel;
+
     RowService rowService = new RowService();
 //https://abhiandroid.com/ui/custom-simpleadapter.html#Example_Of_Custom_SimpleAdapter_in_Android_Studio&gsc.tab=0
     @Override
@@ -26,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rowList = findViewById(R.id.race_row_list);
+
+        rowViewModel = new ViewModelProvider.AndroidViewModelFactory(getApplication()).create(RowViewModel.class);
+        rowViewModel.getAllRows().observe(this, new Observer<List<RowEntity>>() {
+            @Override
+            public void onChanged(List<RowEntity> rowEntities) {
+
+            }
+        });
 
         List<RowEntity> rowEntityList = rowService.returnListOfRows();
         ArrayList<HashMap<String, String>> mapArrayList = new ArrayList<>();
@@ -53,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
         rowList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), String.valueOf(rowService.getTotalPoints(rowEntityList.get(i))), Toast.LENGTH_LONG).show();//show the selected image in toast according to position
+                //Toast.makeText(getApplicationContext(), String.valueOf(rowService.getTotalPoints(rowEntityList.get(i))), Toast.LENGTH_LONG).show();//show the selected image in toast according to position
+                startActivity(new Intent(MainActivity.this, AddEditRaceListItemActivity.class));
             }
         });
     }

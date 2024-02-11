@@ -1,4 +1,4 @@
-package com.tomveselka.prazskalitackamobile.race;
+package com.tomveselka.prazskalitackamobile.race.domain;
 
 
 

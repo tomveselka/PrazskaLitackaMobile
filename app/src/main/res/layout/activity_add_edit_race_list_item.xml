@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    tools:context=".AddEditRaceListItemActivity">
+
+    <TextView
+        android:id="@+id/dialog_add_edit_item_from_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        style="@style/AddEditRaceItemLabel"
+        android:text="@string/from_label" />
+
+    <EditText
+        android:id="@+id/dialog_add_edit_item_from_input"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_from_label"
+        android:inputType="text"
+        android:text="@string/from_default"
+        style="@style/AddEditRaceItemValue"
+        />
+
+    <TextView
+        android:id="@+id/dialog_add_edit_item_from_points"
+        android:layout_below="@+id/dialog_add_edit_item_from_label"
+        android:layout_toRightOf="@+id/dialog_add_edit_item_from_input"
+        style="@style/AddEditRacePointsValue"
+        android:text="5"
+        />
+
+    <TextView
+        android:id="@+id/dialog_add_edit_item_to_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_from_input"
+        style="@style/AddEditRaceItemLabel"
+        android:text="@string/to_label" />
+
+    <EditText
+        android:id="@+id/dialog_add_edit_item_to_input"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_to_label"
+        android:inputType="text"
+        style="@style/AddEditRaceItemValue"
+        android:text="@string/to_default"
+        />
+
+    <TextView
+        android:id="@+id/dialog_add_edit_item_to_points"
+        android:layout_below="@+id/dialog_add_edit_item_to_label"
+        android:layout_toRightOf="@+id/dialog_add_edit_item_to_input"
+        android:text="6"
+        style="@style/AddEditRacePointsValue"
+        />
+
+    <TextView
+        android:id="@+id/dialog_add_edit_item_line_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_to_input"
+        style="@style/AddEditRaceItemLabel"
+        android:text="@string/line_label"
+        />
+
+    <EditText
+        android:id="@+id/dialog_add_edit_item_line_value"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_line_label"
+        android:inputType="text"
+        android:text=""
+        style="@style/AddEditRaceItemValue"
+        />
+
+    <TextView
+        android:id="@+id/dialog_add_edit_item_line_points"
+        android:layout_below="@+id/dialog_add_edit_item_line_label"
+        android:layout_toRightOf="@+id/dialog_add_edit_item_line_value"
+        android:text="7"
+        style="@style/AddEditRacePointsValue"/>
+
+    <CheckBox
+        android:id="@+id/dialog_add_edit_item_is_line_nonstandard_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:layout_below="@+id/dialog_add_edit_item_line_value"
+        android:text="@string/checkbox_nonstandard_line" />
+
+    <EditText
+        android:id="@+id/dialog_add_edit_item_nonstandard_line_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_is_line_nonstandard_checkbox"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/nonstandard_line_description"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/dialog_add_edit_item_total_points_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_nonstandard_line_description"
+        style="@style/AddEditRaceItemLabel"
+        android:layout_marginTop="15dp"
+        android:text="@string/points_total_label" />
+
+    <TextView
+        android:id="@+id/dialog_add_edit_item_total_points_value"
+        android:layout_below="@+id/dialog_add_edit_item_total_points_label"
+        android:text="18"
+        style="@style/AddEditRacePointsValue"
+        />
+
+    <Button
+        android:id="@+id/dialog_add_edit_item_save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_total_points_value"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/button_positive_green"
+        android:text="@string/btn_save"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/dialog_add_edit_item_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_add_edit_item_total_points_value"
+        android:layout_marginLeft="80dp"
+        android:layout_toRightOf="@+id/dialog_add_edit_item_save_button"
+        android:text="@string/btn_cancel"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

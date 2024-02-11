@@ -5,5 +5,6 @@
     <color name="color_bar_primary_red">#F30404</color>
     <color name="color_bar_secondary_red">#FB6C6C</color>
     <color name="color_background_light_blue">#9BDDFB</color>
-
+    <color name="button_negative_red">#F30404</color>
+    <color name="button_positive_green">#D36FFF08</color>
 </resources>
