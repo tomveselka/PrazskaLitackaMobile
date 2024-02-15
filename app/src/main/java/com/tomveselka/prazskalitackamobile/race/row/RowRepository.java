@@ -16,6 +16,7 @@ public class RowRepository {
     private RowDao rowDao;
     private LiveData<List<RowEntity>> rows;
 
+    private LiveData<List<RowEntity>> rowsById;
     ExecutorService executors = Executors.newSingleThreadExecutor();
 
     public RowRepository (Application application){
@@ -57,5 +58,7 @@ public class RowRepository {
     public LiveData<List<RowEntity>> getRows() {
         return rows;
     }
+
+    public LiveData<List<RowEntity>> getRowsById() {return rowsById;}
 
 }

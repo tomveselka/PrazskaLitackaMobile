@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,6 +12,8 @@
         android:id="@+id/user_summary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:stretchColumns="*">
 
         <TableRow
@@ -59,15 +61,28 @@
 
     </TableLayout>
 
+    <!--
     <ListView
         android:id="@+id/race_row_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+        -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/race_row_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/user_summary"
+        app:layout_constraintBottom_toTopOf="@id/points_summary"
+        tools:listitem="@layout/activity_race_list_item"/>
     <TableLayout
         android:id="@+id/points_summary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/race_row_list"
         android:stretchColumns="*">
 
         <TableRow
@@ -86,7 +101,7 @@
                 android:id="@+id/points_total_value"
                 android:layout_width="177dp"
                 android:layout_height="wrap_content"
-                android:text="@string/points_total_value"
+                android:text="@string/zero_digit"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </TableRow>
@@ -136,4 +151,6 @@
         </TableRow>
     </TableLayout>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

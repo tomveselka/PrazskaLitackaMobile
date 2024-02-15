@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.tomveselka.prazskalitackamobile.entities.RowEntity;
+import com.tomveselka.prazskalitackamobile.race.row.RowRepository;
 
 import java.util.List;
 
@@ -34,6 +35,7 @@ public class RowViewModel extends AndroidViewModel {
         repository.deleteRow(row);
     }
 
+    public LiveData<List<RowEntity>>  getRowById(int id){return rows;}
     public LiveData<List<RowEntity>> getAllRows(){
         return rows;
     }

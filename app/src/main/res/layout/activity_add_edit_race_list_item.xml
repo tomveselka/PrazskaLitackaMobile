@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_below="@+id/dialog_add_edit_item_from_label"
         android:inputType="text"
-        android:text="@string/from_default"
+        android:hint="@string/from_hint"
         style="@style/AddEditRaceItemValue"
         />
 
@@ -29,7 +29,7 @@
         android:layout_below="@+id/dialog_add_edit_item_from_label"
         android:layout_toRightOf="@+id/dialog_add_edit_item_from_input"
         style="@style/AddEditRacePointsValue"
-        android:text="5"
+        android:text="@string/zero_digit"
         />
 
     <TextView
@@ -46,14 +46,14 @@
         android:layout_below="@+id/dialog_add_edit_item_to_label"
         android:inputType="text"
         style="@style/AddEditRaceItemValue"
-        android:text="@string/to_default"
+        android:hint="@string/to_hint"
         />
 
     <TextView
         android:id="@+id/dialog_add_edit_item_to_points"
         android:layout_below="@+id/dialog_add_edit_item_to_label"
         android:layout_toRightOf="@+id/dialog_add_edit_item_to_input"
-        android:text="6"
+        android:text="@string/zero_digit"
         style="@style/AddEditRacePointsValue"
         />
 
@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_below="@+id/dialog_add_edit_item_line_label"
         android:inputType="text"
-        android:text=""
+        android:hint="@string/line_hint"
         style="@style/AddEditRaceItemValue"
         />
 
@@ -79,7 +79,7 @@
         android:id="@+id/dialog_add_edit_item_line_points"
         android:layout_below="@+id/dialog_add_edit_item_line_label"
         android:layout_toRightOf="@+id/dialog_add_edit_item_line_value"
-        android:text="7"
+        android:text="@string/zero_digit"
         style="@style/AddEditRacePointsValue"/>
 
     <CheckBox
@@ -97,7 +97,7 @@
         android:layout_below="@+id/dialog_add_edit_item_is_line_nonstandard_checkbox"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/nonstandard_line_description"
+        android:hint="@string/nonstandard_line_description_hint"
         android:textSize="20sp" />
 
     <TextView
@@ -112,7 +112,7 @@
     <TextView
         android:id="@+id/dialog_add_edit_item_total_points_value"
         android:layout_below="@+id/dialog_add_edit_item_total_points_label"
-        android:text="18"
+        android:text="@string/zero_digit"
         style="@style/AddEditRacePointsValue"
         />
 

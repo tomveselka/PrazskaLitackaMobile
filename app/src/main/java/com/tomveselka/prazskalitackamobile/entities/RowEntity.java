@@ -133,6 +133,10 @@ public class RowEntity {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public RowEntity(boolean fromDuplicate, int fromPoints, boolean fromBonus, String fromStation, boolean toDuplicate, int toPoints, boolean toBonus, String toStation, boolean lineDuplicate, int linePoints, boolean lineBonus, String lineNumber, String lineType) {
         this.fromDuplicate = fromDuplicate;
         this.fromPoints = fromPoints;

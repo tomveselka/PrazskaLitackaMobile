@@ -26,4 +26,7 @@ public interface RowDao {
 
     @Query("SELECT * FROM rows_of_races ORDER BY id ASC")
     LiveData<List<RowEntity>> getAllRows();
+
+    @Query("SELECT * FROM rows_of_races WHERE id= :id ORDER BY id ASC")
+    LiveData<List<RowEntity>>  getRowById(int id);
 }
