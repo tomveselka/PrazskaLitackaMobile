@@ -1,21 +1,16 @@
 package com.tomveselka.prazskalitackamobile.race.row;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.tomveselka.prazskalitackamobile.AddEditRaceListItemActivity;
-import com.tomveselka.prazskalitackamobile.MainActivity;
 import com.tomveselka.prazskalitackamobile.R;
 import com.tomveselka.prazskalitackamobile.entities.RowEntity;
 import com.tomveselka.prazskalitackamobile.race.domain.RowService;
@@ -75,6 +70,9 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.RowHolder> {
         notifyDataSetChanged();
     }
 
+    public RowEntity getRows(int position){
+        return rows.get(position);
+    }
 
     class RowHolder extends RecyclerView.ViewHolder{
         TextView textViewFromValue;
@@ -86,6 +84,7 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.RowHolder> {
         TextView textViewTotalPoints;
 
         CardView cardView;
+
 
         public RowHolder(@NonNull View itemView) {
             super(itemView);

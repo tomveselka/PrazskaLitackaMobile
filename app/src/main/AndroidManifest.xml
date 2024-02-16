@@ -13,7 +13,11 @@
         android:theme="@style/Theme.PrazskaLitackaMobile"
         tools:targetApi="31" >
         <activity
-            android:name=".AddEditRaceListItemActivity"
+            android:name=".EditRowActivity"
+            android:theme="@style/Theme.DialogAddItem"
+            android:exported="false" />
+        <activity
+            android:name="AddRowActivity"
             android:theme="@style/Theme.DialogAddItem"
             android:exported="false" />
         <activity
