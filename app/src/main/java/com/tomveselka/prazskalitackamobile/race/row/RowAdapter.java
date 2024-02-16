@@ -26,7 +26,7 @@ import java.util.List;
 public class RowAdapter extends RecyclerView.Adapter<RowAdapter.RowHolder> {
 
     private List<RowEntity> rows = new ArrayList<>();
-
+    private OnItemClickListener listener;
     private Context context;
     RowService rowService = new RowService();
 
@@ -53,16 +53,16 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.RowHolder> {
         holder.imageViewTransportTypeIcon.setImageResource(R.drawable.bus_icon);
         holder.textViewTransportPoints.setText(currentRow.getLinePoints()+"");
         holder.textViewTotalPoints.setText(Integer.toString(rowService.getTotalPoints(currentRow)));
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i("UserInput","Clicked on "+currentRow.getFromStation()+ " to " + currentRow.getToStation());
-                //Toast.makeText(context,"test",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(context, AddEditRaceListItemActivity.class);
-                i.putExtra("row_id",currentRow.getId());
-                context.startActivity(i);
-            }
-        });
+
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(RowEntity row);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener=listener;
+
     }
 
     @Override
@@ -97,6 +97,17 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.RowHolder> {
             textViewTransportPoints = itemView.findViewById(R.id.transport_points);
             textViewTotalPoints = itemView.findViewById(R.id.points_value);
             cardView = itemView.findViewById(R.id.row_card_view);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if(listener!=null && position != RecyclerView.NO_POSITION){
+                        listener.onItemClick(rows.get(position));
+                    }
+
+                }
+            });
         }
     }
 }
