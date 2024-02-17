@@ -46,6 +46,7 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.RowHolder> {
         holder.textViewToValue.setText(currentRow.getToStation());
         holder.textViewToPoints.setText(currentRow.getToPoints()+"");
         holder.imageViewTransportTypeIcon.setImageResource(R.drawable.bus_icon);
+        holder.textViewTransportNumber.setText(currentRow.getLineNumber());
         holder.textViewTransportPoints.setText(currentRow.getLinePoints()+"");
         holder.textViewTotalPoints.setText(Integer.toString(rowService.getTotalPoints(currentRow)));
 
@@ -80,6 +81,7 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.RowHolder> {
         TextView textViewToValue;
         TextView textViewToPoints;
         ImageView imageViewTransportTypeIcon;
+        TextView textViewTransportNumber;
         TextView textViewTransportPoints;
         TextView textViewTotalPoints;
 
@@ -93,6 +95,7 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.RowHolder> {
             textViewToValue = itemView.findViewById(R.id.to_value);
             textViewToPoints = itemView.findViewById(R.id.to_points);
             imageViewTransportTypeIcon = itemView.findViewById(R.id.transport_type_icon);
+            textViewTransportNumber= itemView.findViewById(R.id.transport_number);
             textViewTransportPoints = itemView.findViewById(R.id.transport_points);
             textViewTotalPoints = itemView.findViewById(R.id.points_value);
             cardView = itemView.findViewById(R.id.row_card_view);

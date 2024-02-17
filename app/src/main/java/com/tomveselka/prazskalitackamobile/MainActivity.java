@@ -23,7 +23,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.tomveselka.prazskalitackamobile.entities.RowEntity;
+import com.tomveselka.prazskalitackamobile.race.activities.EditRowActivity;
 import com.tomveselka.prazskalitackamobile.race.domain.RowService;
+import com.tomveselka.prazskalitackamobile.race.activities.AddRowActivity;
 import com.tomveselka.prazskalitackamobile.race.row.RowAdapter;
 import com.tomveselka.prazskalitackamobile.race.row.RowDTO;
 import com.tomveselka.prazskalitackamobile.race.row.RowViewModel;

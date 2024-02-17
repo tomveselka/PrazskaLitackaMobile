@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 public class RowDTO implements Parcelable {
     private int id;
+    private int race_id;
     private boolean fromDuplicate;
     private int fromPoints;
     private boolean fromBonus;
@@ -23,9 +24,15 @@ public class RowDTO implements Parcelable {
     private boolean lineBonus;
     private String lineNumber;
     private String lineType;
+    private boolean isNonStandard;
+    private String nonStandardDescription;
+
+    private int totalPoints;
+
 
     protected RowDTO(Parcel in) {
         id = in.readInt();
+        race_id = in.readInt();
         fromDuplicate = in.readByte() != 0;
         fromPoints = in.readInt();
         fromBonus = in.readByte() != 0;
@@ -39,6 +46,9 @@ public class RowDTO implements Parcelable {
         lineBonus = in.readByte() != 0;
         lineNumber = in.readString();
         lineType = in.readString();
+        isNonStandard = in.readByte() != 0;
+        nonStandardDescription = in.readString();
+        totalPoints = in.readInt();
     }
 
     public static final Creator<RowDTO> CREATOR = new Creator<RowDTO>() {
@@ -52,29 +62,6 @@ public class RowDTO implements Parcelable {
             return new RowDTO[size];
         }
     };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeInt(id);
-        parcel.writeByte((byte) (fromDuplicate ? 1 : 0));
-        parcel.writeInt(fromPoints);
-        parcel.writeByte((byte) (fromBonus ? 1 : 0));
-        parcel.writeString(fromStation);
-        parcel.writeByte((byte) (toDuplicate ? 1 : 0));
-        parcel.writeInt(toPoints);
-        parcel.writeByte((byte) (toBonus ? 1 : 0));
-        parcel.writeString(toStation);
-        parcel.writeByte((byte) (lineDuplicate ? 1 : 0));
-        parcel.writeInt(linePoints);
-        parcel.writeByte((byte) (lineBonus ? 1 : 0));
-        parcel.writeString(lineNumber);
-        parcel.writeString(lineType);
-    }
 
     public int getId() {
         return id;
@@ -188,6 +175,38 @@ public class RowDTO implements Parcelable {
         this.lineType = lineType;
     }
 
+    public boolean isNonStandard() {
+        return isNonStandard;
+    }
+
+    public void setNonStandard(boolean nonStandard) {
+        isNonStandard = nonStandard;
+    }
+
+    public String getNonStandardDescription() {
+        return nonStandardDescription;
+    }
+
+    public void setNonStandardDescription(String nonStandardDescription) {
+        this.nonStandardDescription = nonStandardDescription;
+    }
+
+    public int getTotalPoints() {
+        return totalPoints;
+    }
+
+    public void setTotalPoints(int totalPoints) {
+        this.totalPoints = totalPoints;
+    }
+
+    public int getRace_id() {
+        return race_id;
+    }
+
+    public void setRace_id(int race_id) {
+        this.race_id = race_id;
+    }
+
     public RowDTO() {
     }
 
@@ -195,6 +214,7 @@ public class RowDTO implements Parcelable {
     public String toString() {
         return "RowDTO{" +
                 "id=" + id +
+                ", race_id=" + race_id +
                 ", fromDuplicate=" + fromDuplicate +
                 ", fromPoints=" + fromPoints +
                 ", fromBonus=" + fromBonus +
@@ -208,6 +228,36 @@ public class RowDTO implements Parcelable {
                 ", lineBonus=" + lineBonus +
                 ", lineNumber='" + lineNumber + '\'' +
                 ", lineType='" + lineType + '\'' +
+                ", isNonStandard=" + isNonStandard +
+                ", nonStandardDescription='" + nonStandardDescription + '\'' +
+                ", totalPoints=" + totalPoints +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeInt(race_id);
+        parcel.writeByte((byte) (fromDuplicate ? 1 : 0));
+        parcel.writeInt(fromPoints);
+        parcel.writeByte((byte) (fromBonus ? 1 : 0));
+        parcel.writeString(fromStation);
+        parcel.writeByte((byte) (toDuplicate ? 1 : 0));
+        parcel.writeInt(toPoints);
+        parcel.writeByte((byte) (toBonus ? 1 : 0));
+        parcel.writeString(toStation);
+        parcel.writeByte((byte) (lineDuplicate ? 1 : 0));
+        parcel.writeInt(linePoints);
+        parcel.writeByte((byte) (lineBonus ? 1 : 0));
+        parcel.writeString(lineNumber);
+        parcel.writeString(lineType);
+        parcel.writeByte((byte) (isNonStandard ? 1 : 0));
+        parcel.writeString(nonStandardDescription);
+        parcel.writeInt(totalPoints);
     }
 }

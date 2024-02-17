@@ -25,16 +25,14 @@
                 android:layout_width="172dp"
                 android:layout_height="wrap_content"
                 android:text="@string/racer_name_label"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/race_view_text" />
 
             <TextView
                 android:id="@+id/racer_name_value"
                 android:layout_width="177dp"
                 android:layout_height="wrap_content"
                 android:text="@string/racer_name_value"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/race_view_text" />
         </TableRow>
 
         <TableRow
@@ -46,16 +44,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/racer_id_label"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/race_view_text" />
 
             <TextView
                 android:id="@+id/racer_id_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/racer_id_value"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/race_view_text" />
 
         </TableRow>
 
@@ -92,10 +88,9 @@
                 android:id="@+id/add_row_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/dialog_add_edit_item_total_points_value"
                 android:layout_marginLeft="20dp"
                 android:backgroundTint="@color/button_positive_green"
-                android:text="@string/btn_save"
+                android:text="@string/btn_add_row"
                 android:textColor="#000000"
                 android:textStyle="bold" />
         </TableRow>
@@ -109,15 +104,18 @@
                 android:layout_width="172dp"
                 android:layout_height="wrap_content"
                 android:text="@string/points_total_label"
-                android:textSize="16sp"
+                android:textSize="22sp"
+                android:textColor="@color/total_points_orange"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/points_total_value"
                 android:layout_width="177dp"
                 android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
                 android:text="@string/zero_digit"
-                android:textSize="16sp"
+                android:textSize="22sp"
+                android:textColor="@color/total_points_orange"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -130,16 +128,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bonus_stations_number_label"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/race_view_text" />
 
             <TextView
                 android:id="@+id/bonus_stations_number_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bonus_stations_number_value"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:paddingLeft="7dp"
+                style="@style/race_view_text" />
 
         </TableRow>
 
@@ -152,17 +149,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bonus_lines_number_label"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/race_view_text" />
 
             <TextView
                 android:id="@+id/bonus_lines_number_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bonus_lines_number_value"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:paddingLeft="7dp"
+                style="@style/race_view_text" />
 
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/end_race_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="@color/color_bar_primary_red"
+                android:text="@string/btn_end_race"
+                android:textColor="#000000"
+                android:textStyle="bold" />
         </TableRow>
     </TableLayout>
 

@@ -7,4 +7,5 @@
     <color name="color_background_light_blue">#9BDDFB</color>
     <color name="button_negative_red">#F30404</color>
     <color name="button_positive_green">#D36FFF08</color>
+    <color name="total_points_orange">#E89419</color>
 </resources>

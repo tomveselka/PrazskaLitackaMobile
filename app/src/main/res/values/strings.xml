@@ -4,12 +4,14 @@
     <string name="racer_name_value">Pepa Novak</string>
     <string name="racer_id_label">Number of racer</string>
     <string name="racer_id_value">00</string>
+    <string name="btn_add_row">Add</string>
     <string name="points_total_label">Points total</string>
-    <string name="points_total_value">62</string>
+    <string name="points_total_value">0</string>
     <string name="bonus_stations_number_label">Bonus stations visited</string>
     <string name="bonus_stations_number_value">0/0</string>
     <string name="bonus_lines_number_label">Bonus lines visited</string>
     <string name="bonus_lines_number_value">0/0</string>
+    <string name="btn_end_race">End Race</string>
     <string name="from_label">Fr:</string>
     <string name="from_hint">Starting station</string>
     <string name="to_label">To:</string>

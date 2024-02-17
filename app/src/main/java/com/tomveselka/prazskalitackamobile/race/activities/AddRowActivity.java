@@ -1,6 +1,4 @@
-package com.tomveselka.prazskalitackamobile;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.tomveselka.prazskalitackamobile.race.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +8,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.tomveselka.prazskalitackamobile.R;
 import com.tomveselka.prazskalitackamobile.race.row.RowDTO;
 import com.tomveselka.prazskalitackamobile.race.row.RowViewModel;
 
-public class EditRowActivity extends AppCompatActivity {
+public class AddRowActivity extends AppCompatActivity {
 
     Button btnCancel;
     Button btnSave;
@@ -27,8 +28,6 @@ public class EditRowActivity extends AppCompatActivity {
     CheckBox nonStandardCheckbox;
     TextView textViewNonStandardDescription;
     TextView textViewTotalPoints;
-
-    RowDTO rowDTO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +47,13 @@ public class EditRowActivity extends AppCompatActivity {
         textViewNonStandardDescription =findViewById(R.id.dialog_add_edit_item_nonstandard_line_description);
         textViewTotalPoints=findViewById(R.id.dialog_add_edit_item_from_input);
 
-        getData();
-
         btnCancel = findViewById(R.id.dialog_add_edit_item_cancel_button);
         btnSave = findViewById(R.id.dialog_add_edit_item_save_button);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateRow();
+                saveRow();
             }
         });
 
@@ -68,42 +65,20 @@ public class EditRowActivity extends AppCompatActivity {
         });
     }
 
-    private void updateRow(){
+    private void saveRow(){
         RowDTO returnDTO = new RowDTO();
-        returnDTO.setId(rowDTO.getId());
         returnDTO.setFromStation(textViewFromValue.getText().toString());
         returnDTO.setFromPoints(Integer.valueOf(textViewFromPoints.getText().toString()));
         returnDTO.setToStation(textViewToValue.getText().toString());
         returnDTO.setToPoints(Integer.valueOf(textViewToPoints.getText().toString()));
         returnDTO.setLineNumber(textViewLineNumber.getText().toString());
         returnDTO.setLinePoints(Integer.valueOf(textViewLinePoints.getText().toString()));
+        returnDTO.setNonStandard(nonStandardCheckbox.isChecked());
+        returnDTO.setNonStandardDescription(textViewNonStandardDescription.getText().toString());
         Intent intent = new Intent();
-        intent.putExtra("return_from_row_to_edit",returnDTO);
+        intent.putExtra("return_from_row_to_add",returnDTO);
         setResult(RESULT_OK,intent);
         Log.i("Sending data", "Sending data back to Race Activity row" + returnDTO.toString());
         finish();
     }
-
-    public void getData(){
-        Intent intent = getIntent();
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-            rowDTO = intent.getParcelableExtra("row_to_edit_activity",RowDTO.class);
-        }else{
-            rowDTO = intent.getParcelableExtra("row_to_edit_activity");
-        }
-        if(rowDTO!=null) {
-            Log.i("Received data", "Received from Race Activity row " + rowDTO.toString());
-            textViewFromValue.setText(rowDTO.getFromStation());
-            textViewFromPoints.setText(String.valueOf(rowDTO.getFromPoints()));
-            textViewToValue.setText(rowDTO.getToStation());
-            textViewToPoints.setText(String.valueOf(rowDTO.getToPoints()));
-            textViewLineNumber.setText(rowDTO.getLineNumber());
-            textViewLinePoints.setText(String.valueOf(rowDTO.getLinePoints()));
-            //nonStandardDescription.setText(rowDTO.getFromPoints());
-            //textViewTotalPoints.setText(rowDTO.get);
-        }
-    }
-
-
 }

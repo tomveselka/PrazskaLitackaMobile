@@ -8,6 +8,9 @@ public class RowEntity {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
+
+    private int race_id;
+
     private boolean fromDuplicate;
     private int fromPoints;
     private boolean fromBonus;
@@ -24,6 +27,11 @@ public class RowEntity {
     private boolean lineBonus;
     private String lineNumber;
     private String lineType;
+
+    private boolean isNonStandard;
+    private String nonStandardDescription;
+
+    private int totalPoints;
 
     public boolean isFromDuplicate() {
         return fromDuplicate;
@@ -137,7 +145,42 @@ public class RowEntity {
         this.id = id;
     }
 
-    public RowEntity(boolean fromDuplicate, int fromPoints, boolean fromBonus, String fromStation, boolean toDuplicate, int toPoints, boolean toBonus, String toStation, boolean lineDuplicate, int linePoints, boolean lineBonus, String lineNumber, String lineType) {
+    public boolean isNonStandard() {
+        return isNonStandard;
+    }
+
+    public void setNonStandard(boolean nonStandard) {
+        isNonStandard = nonStandard;
+    }
+
+    public String getNonStandardDescription() {
+        return nonStandardDescription;
+    }
+
+    public void setNonStandardDescription(String nonStandardDescription) {
+        this.nonStandardDescription = nonStandardDescription;
+    }
+
+    public int getTotalPoints() {
+        return totalPoints;
+    }
+
+    public void setTotalPoints(int totalPoints) {
+        this.totalPoints = totalPoints;
+    }
+
+    public int getRace_id() {
+        return race_id;
+    }
+
+    public void setRace_id(int race_id) {
+        this.race_id = race_id;
+    }
+
+    public RowEntity() {
+    }
+
+    public RowEntity(boolean fromDuplicate, int fromPoints, boolean fromBonus, String fromStation, boolean toDuplicate, int toPoints, boolean toBonus, String toStation, boolean lineDuplicate, int linePoints, boolean lineBonus, String lineNumber, String lineType, boolean isNonStandard, String nonStandardDescription, int totalPoints,int race_id) {
         this.fromDuplicate = fromDuplicate;
         this.fromPoints = fromPoints;
         this.fromBonus = fromBonus;
@@ -151,15 +194,17 @@ public class RowEntity {
         this.lineBonus = lineBonus;
         this.lineNumber = lineNumber;
         this.lineType = lineType;
-    }
-
-    public RowEntity() {
+        this.isNonStandard = isNonStandard;
+        this.nonStandardDescription = nonStandardDescription;
+        this.totalPoints = totalPoints;
+        this.race_id = race_id;
     }
 
     @Override
     public String toString() {
         return "RowEntity{" +
                 "id=" + id +
+                ", race_id=" + race_id +
                 ", fromDuplicate=" + fromDuplicate +
                 ", fromPoints=" + fromPoints +
                 ", fromBonus=" + fromBonus +
@@ -173,6 +218,9 @@ public class RowEntity {
                 ", lineBonus=" + lineBonus +
                 ", lineNumber='" + lineNumber + '\'' +
                 ", lineType='" + lineType + '\'' +
+                ", isNonStandard=" + isNonStandard +
+                ", nonStandardDescription='" + nonStandardDescription + '\'' +
+                ", totalPoints=" + totalPoints +
                 '}';
     }
 }

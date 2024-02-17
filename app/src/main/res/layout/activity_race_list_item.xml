@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".RaceListItemActivity">
+    tools:context=".race.activities.RaceListItemActivity">
 
 
     <androidx.cardview.widget.CardView
@@ -17,82 +17,98 @@
         android:layout_height="wrap_content">
 
         <TextView
-        android:id="@+id/from_label"
-        android:layout_width="20dp"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:gravity="center"
-        android:text="@string/from_label" />
+            android:id="@+id/from_label"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="@string/from_label"
+            style="@style/row_list_item_text"/>
 
-    <TextView
-        android:id="@+id/from_value"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@+id/from_label"
-        android:gravity="center_vertical"
-        android:text="Krizikova" />
+        <TextView
+            android:id="@+id/from_value"
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/from_label"
+            android:gravity="center_vertical"
+            android:text="Krizikova"
+            style="@style/row_list_item_text" />
 
-    <TextView
-        android:id="@+id/to_label"
-        android:layout_width="20dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/from_label"
-        android:gravity="center"
-        android:text="@string/to_label" />
+        <TextView
+            android:id="@+id/to_label"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/from_label"
+            android:gravity="center"
+            android:text="@string/to_label"
+            style="@style/row_list_item_text" />
 
-    <TextView
-        android:id="@+id/to_value"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/from_value"
-        android:layout_toRightOf="@+id/from_label"
-        android:gravity="center_vertical"
-        android:text="Urxova"
-        />
+        <TextView
+            android:id="@+id/to_value"
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/from_value"
+            android:layout_toRightOf="@+id/from_label"
+            android:gravity="center_vertical"
+            android:text="Urxova"
+            style="@style/row_list_item_text" />
 
-    <TextView
-        android:id="@+id/from_points"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@+id/from_value"
-        android:gravity="center"
-        android:text="15" />
+        <TextView
+            android:id="@+id/from_points"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/from_value"
+            android:gravity="center"
+            android:text="15"
+            style="@style/row_list_item_text"/>
 
-    <TextView
-        android:id="@+id/to_points"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/from_points"
-        android:layout_toRightOf="@+id/from_value"
-        android:gravity="center"
-        android:text="15" />
+        <TextView
+            android:id="@+id/to_points"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/from_points"
+            android:layout_toRightOf="@+id/from_value"
+            android:gravity="center"
+            android:text="15"
+            style="@style/row_list_item_text"/>
 
-    <ImageView
-        android:id="@+id/transport_type_icon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_toRightOf="@+id/from_points"
-        android:gravity="center"
-        android:src="@drawable/bus_icon" />
+        <ImageView
+            android:id="@+id/transport_type_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/from_points"
+            android:gravity="center"
+            android:src="@drawable/bus_icon" />
 
-    <TextView
-        android:id="@+id/transport_points"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_toRightOf="@+id/transport_type_icon"
-        android:gravity="center_vertical"
-        android:text="15"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/transport_number"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/transport_type_icon"
+            android:gravity="center_vertical"
+            android:text="15"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/points_value"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_toRightOf="@+id/transport_points"
-        android:gravity="center"
-        android:text="15"
-        android:textAlignment="center"
-        android:textSize="48sp" />
+        <TextView
+            android:id="@+id/transport_points"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/transport_number"
+            android:gravity="center_vertical"
+            android:text="15"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/points_value"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/transport_points"
+            android:gravity="center"
+            android:text="15"
+            android:textAlignment="center"
+            android:textColor="@color/total_points_orange"
+            android:textSize="48sp" />
     </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

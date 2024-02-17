@@ -13,15 +13,15 @@
         android:theme="@style/Theme.PrazskaLitackaMobile"
         tools:targetApi="31" >
         <activity
-            android:name=".EditRowActivity"
+            android:name=".race.activities.EditRowActivity"
             android:theme="@style/Theme.DialogAddItem"
             android:exported="false" />
         <activity
-            android:name="AddRowActivity"
+            android:name=".race.activities.AddRowActivity"
             android:theme="@style/Theme.DialogAddItem"
             android:exported="false" />
         <activity
-            android:name=".RaceListItemActivity"
+            android:name=".race.activities.RaceListItemActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

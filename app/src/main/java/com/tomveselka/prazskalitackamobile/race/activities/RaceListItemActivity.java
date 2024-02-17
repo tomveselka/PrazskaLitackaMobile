@@ -1,8 +1,10 @@
-package com.tomveselka.prazskalitackamobile;
+package com.tomveselka.prazskalitackamobile.race.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.tomveselka.prazskalitackamobile.R;
 
 public class RaceListItemActivity extends AppCompatActivity {
 
